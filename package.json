@@ -1,6 +1,6 @@
 {
-  "name": "command.ts-v5-template",
-  "version": "1.0.0",
+  "name": "gh-bot",
+  "version": "0.1.0",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {

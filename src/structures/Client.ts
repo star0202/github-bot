@@ -2,7 +2,7 @@ import {
   applicationCommand,
   CommandClient,
   Extension,
-  ownerOnly,
+  ownerOnly
 } from "@pikokr/command.ts"
 import { ApplicationCommandType, ChatInputCommandInteraction } from "discord.js"
 import path from "path"
@@ -13,13 +13,13 @@ class DevModule extends Extension {
   @applicationCommand({
     type: ApplicationCommandType.ChatInput,
     name: "reload",
-    description: "reload modules",
+    description: "reload modules"
   })
   async reload(i: ChatInputCommandInteraction) {
     await i.deferReply()
     const result = await this.commandClient.registry.reloadModules()
     await i.editReply(
-      `Succeed: ${result.filter((x) => x.result).length} Error: ${
+      `Succeed: ${ result.filter((x) => x.result).length } Error: ${
         result.filter((x) => !x.result).length
       }`
     )
